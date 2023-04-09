@@ -1,7 +1,14 @@
+import { Body, Container } from "./App.styles";
 
 const app = () => {
   return (
-    <div>start</div>
+    <Container>
+      <Body>
+        <header>
+          <h1>Lista de Tarefas</h1>
+        </header>
+      </Body>
+    </Container>
   )
 }
 
