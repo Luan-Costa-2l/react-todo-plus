@@ -4,7 +4,7 @@ export const SearchBody = styled.div`
     border: 1px solid #777;
     border-radius: 15px;
     height: 40px;
-    margin-top: 20px;
+    margin: 20px 0;
     overflow: hidden;
     display: flex;
     align-items: center;
