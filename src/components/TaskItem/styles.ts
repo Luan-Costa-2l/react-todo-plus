@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TaskBody = styled.div`
+export const TaskBody = styled.div<{done: boolean}>`
     background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
@@ -15,5 +15,6 @@ export const TaskBody = styled.div`
 
     .taskBody--name {
         color: #CCC;
+        text-decoration: ${props => props.done ? 'line-through' : 'initial'};
     }
 `;
