@@ -12,7 +12,7 @@ export const TaskItem = ({ item }: Props) => {
 
     return (
         <TaskBody done={isChecked}>
-            <input type="checkbox" name="checkbox" checked={isChecked} onChange={() => setIsChecked(!isChecked)} />
+            <input type="checkbox" name="checkbox" checked={isChecked} onChange={e => setIsChecked(e.target.checked)} />
             <div className="taskBody--name">{item.name}</div>
         </TaskBody>
     )

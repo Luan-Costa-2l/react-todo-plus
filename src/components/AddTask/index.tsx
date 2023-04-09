@@ -1,10 +1,24 @@
-import { SearchBody } from "./styles"
+import { useState } from "react";
+import { SearchBody } from "./styles";
 
-export const AddTask = () => {
+interface Props {
+    addTask: (task: string) => void;
+}
+
+export const AddTask = ({ addTask }: Props) => {
+    const [task, setTask] = useState('');
+
+    const handleKeyUp: React.KeyboardEventHandler<HTMLInputElement> = (event) => {
+        if (event.code === 'Enter') {
+            addTask(task);
+            setTask('');
+        }
+    }
+
     return (
         <SearchBody>
-            <button className="addIcon">+</button>
-            <input type="text" placeholder="Adicione uma tarefa" />
+            <button className="addIcon" onClick={() => addTask(task)}>+</button>
+            <input type="text" placeholder="Adicione uma tarefa" value={task} onChange={e => setTask(e.target.value)} onKeyUp={handleKeyUp} />
         </SearchBody>
     )
 }
