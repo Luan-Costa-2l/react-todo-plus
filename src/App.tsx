@@ -19,7 +19,17 @@ const app = () => {
     } else {
       alert('Campo tarefa deve ter algum conteúdo.');
     }
-}
+  }
+
+  const handleChecked = (taskId: number) => {
+    let newList = [...list];
+    newList.forEach((item) => {
+      if (item.id === taskId) {
+        item.done = !item.done;
+      }
+    });
+    setList(newList);
+  }
 
   return (
     <Container>
@@ -31,7 +41,7 @@ const app = () => {
         <AddTask addTask={handleAddTask} />
 
         {list.map((item, index) => (
-          <TaskItem item={item} key={index} />
+          <TaskItem item={item} key={index} handleChecked={handleChecked} />
         ))}
 
         
