@@ -6,10 +6,7 @@ import { ItemType } from "./styles/Item";
 import { TaskItem } from "./components/TaskItem";
 
 const app = () => {
-  const [list, setList] = useState<ItemType[]>([
-    {id: 1, name: 'Comprar pão', done: false},
-    {id: 2, name: 'Estudar Sass', done: true}
-  ]);
+  const [list, setList] = useState<ItemType[]>([]);
 
   const handleAddTask = (task: string) => {
     if (task !== '') {
@@ -36,7 +33,12 @@ const app = () => {
         {list.map((item, index) => (
           <TaskItem item={item} key={index} />
         ))}
+
+        
       </Body>
+      <footer>
+        <p>Criado pro <a href="https://www.linkedin.com/in/luan-cordeiro-575826254/" target="_blank">Luan C. da Costa</a>.</p>
+      </footer>
     </Container>
   )
 }
