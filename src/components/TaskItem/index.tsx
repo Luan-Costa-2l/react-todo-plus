@@ -19,7 +19,7 @@ export const TaskItem = ({ item, handleChecked }: Props) => {
     return (
         <TaskBody done={isChecked}>
             <input type="checkbox" name="checkbox" checked={isChecked} onChange={doneTask} />
-            <div className="taskBody--name">{item.name} - {item.done.toString()}</div>
+            <div className="taskBody--name">{item.name}</div>
         </TaskBody>
     )
 }

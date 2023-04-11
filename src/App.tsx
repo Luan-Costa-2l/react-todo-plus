@@ -47,7 +47,7 @@ const app = () => {
         
       </Body>
       <footer>
-        <p>Criado pro <a href="https://www.linkedin.com/in/luan-cordeiro-575826254/" target="_blank">Luan C. da Costa</a>.</p>
+        <p>Criado por <a href="https://www.linkedin.com/in/luan-cordeiro-575826254/" target="_blank">Luan C. da Costa</a>.</p>
       </footer>
     </Container>
   )
