@@ -6,9 +6,10 @@ import { TaskBody } from "./styles"
 interface Props {
     item: ItemType;
     handleChecked: (taskId: number) => void;
+    dark: boolean;
 }
 
-export const TaskItem = ({ item, handleChecked }: Props) => {
+export const TaskItem = ({ item, handleChecked, dark }: Props) => {
     const [isChecked, setIsChecked] = useState(item.done);
 
     const doneTask = () => {
@@ -17,7 +18,7 @@ export const TaskItem = ({ item, handleChecked }: Props) => {
     }
 
     return (
-        <TaskBody done={isChecked}>
+        <TaskBody done={isChecked} dark={dark}>
             <input type="checkbox" name="checkbox" checked={isChecked} onChange={doneTask} />
             <div className="taskBody--name">{item.name}</div>
         </TaskBody>

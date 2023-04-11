@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SearchBody = styled.div`
+export const SearchBody = styled.div<{dark: boolean}>`
     border: 1px solid #777;
     border-radius: 15px;
     height: 40px;
@@ -13,6 +13,10 @@ export const SearchBody = styled.div`
         border: 0;
         outline: 0;
         background-color: transparent;
+
+        &:hover {
+            background-color: ${props => props.dark ? 'transparent' : '#EEE'};
+        }
     }
 
     .addIcon {
@@ -28,6 +32,6 @@ export const SearchBody = styled.div`
         height: inherit;
         padding: 5px;
         font-size: 20px;
-        color: #CCC;
+        color: ${props => props.dark ? '#CCC' : '#000'};
     }
 `;

@@ -7,6 +7,11 @@ import { TaskItem } from "./components/TaskItem";
 
 const app = () => {
   const [list, setList] = useState<ItemType[]>([]);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+  }
 
   const handleAddTask = (task: string) => {
     if (task !== '') {
@@ -32,16 +37,20 @@ const app = () => {
   }
 
   return (
-    <Container>
-      <Body>
+    <Container dark={darkMode}>
+      <button className="toggleButton" onClick={toggleTheme}>
+        <div className="indicator"></div>
+      </button>
+
+      <Body dark={darkMode}>
         <header>
           <h1>Lista de Tarefas</h1>
         </header>
         
-        <AddTask addTask={handleAddTask} />
+        <AddTask addTask={handleAddTask} dark={darkMode} />
 
         {list.map((item, index) => (
-          <TaskItem item={item} key={index} handleChecked={handleChecked} />
+          <TaskItem item={item} key={index} handleChecked={handleChecked} dark={darkMode} />
         ))}
 
         

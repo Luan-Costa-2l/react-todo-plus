@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-export const TaskBody = styled.div<{done: boolean}>`
-    background-color: rgba(255, 255, 255, 0.1);
+export const TaskBody = styled.div<{done: boolean, dark: boolean}>`
+    background-color: ${props => props.dark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'};
+    border: 1px solid #999;
     display: flex;
     align-items: center;
     height: 40px;
@@ -14,7 +15,7 @@ export const TaskBody = styled.div<{done: boolean}>`
     }
 
     .taskBody--name {
-        color: #CCC;
+        color: ${props => props.dark ? '#CCC' : '#000'};
         text-decoration: ${props => props.done ? 'line-through' : 'initial'};
     }
 `;
