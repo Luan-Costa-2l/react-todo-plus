@@ -17,5 +17,6 @@ export const TaskBody = styled.div<{done: boolean, dark: boolean}>`
     .taskBody--name {
         color: ${props => props.dark ? '#CCC' : '#000'};
         text-decoration: ${props => props.done ? 'line-through' : 'initial'};
+        font-size: 20px;
     }
 `;
