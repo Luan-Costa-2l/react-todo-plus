@@ -16,5 +16,15 @@ export const api = {
         let taskList = this.getTaskList();
         let newTaskList = taskList.filter((item) => item.id !== id);
         this.setTaskList(newTaskList);
+    },
+    setTheme: (theme: boolean) => {
+        localStorage.setItem('theme', theme.toString());
+    },
+    getTheme: () => {
+        let response = localStorage.getItem('theme');
+        if (response) {
+            return JSON.parse(response);
+        }
+        return false;
     }
 }

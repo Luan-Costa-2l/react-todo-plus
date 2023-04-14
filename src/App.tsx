@@ -13,10 +13,13 @@ const app = () => {
   useEffect(() => {
     let response = api.getTaskList()
     setList(response);
+    let theme = api.getTheme();
+    setDarkMode(theme);
   }, []);
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
+    api.setTheme(!darkMode);
   }
 
   const handleAddTask = (task: string) => {
