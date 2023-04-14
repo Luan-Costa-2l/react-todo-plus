@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ItemType } from "../../styles/Item"
+import { ItemType } from "../../types/Item"
 import { TaskBody } from "./styles"
 
 interface Props {

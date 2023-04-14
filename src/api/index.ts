@@ -1,4 +1,4 @@
-import { ItemType } from '../styles/Item';
+import { ItemType } from '../types/Item';
 
 export const api = {
     setTaskList: (newList: ItemType[]) => {

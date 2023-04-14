@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { Body, Container } from "./App.styles";
 import { AddTask } from "./components/AddTask";
-import { ItemType } from "./styles/Item";
+import { ItemType } from "./types/Item";
 import { TaskItem } from "./components/TaskItem";
 import { api } from "./api";
 
