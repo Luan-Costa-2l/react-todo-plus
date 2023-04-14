@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Body, Container } from "./App.styles";
 import { AddTask } from "./components/AddTask";
@@ -9,6 +9,11 @@ import { api } from "./api";
 const app = () => {
   const [list, setList] = useState<ItemType[]>([]);
   const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    let response = api.getTaskList()
+    setList(response);
+  }, []);
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
