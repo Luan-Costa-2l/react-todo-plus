@@ -15,8 +15,16 @@ export const TaskBody = styled.div<{done: boolean, dark: boolean}>`
     }
 
     .taskBody--name {
+        flex: 1;
         color: ${props => props.dark ? '#CCC' : '#000'};
         text-decoration: ${props => props.done ? 'line-through' : 'initial'};
         font-size: 20px;
+    }
+
+    .taskBody--deleteIcon {
+        margin-right: 15px;
+        padding: 2px;
+        border-radius: 50%;
+        cursor: pointer;
     }
 `;

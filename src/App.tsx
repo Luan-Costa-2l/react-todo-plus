@@ -58,7 +58,7 @@ const app = () => {
         <AddTask addTask={handleAddTask} dark={darkMode} />
 
         {list.map((item, index) => (
-          <TaskItem item={item} key={index} handleChecked={handleChecked} dark={darkMode} />
+          <TaskItem item={item} key={index} handleChecked={handleChecked} dark={darkMode} setList={setList} />
         ))}
 
         
