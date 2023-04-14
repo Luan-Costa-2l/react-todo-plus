@@ -4,10 +4,11 @@ import { SearchBody } from "./styles";
 interface Props {
     addTask: (task: string) => void;
     dark: boolean;
+    task: string;
+    setTask: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export const AddTask = ({ addTask, dark }: Props) => {
-    const [task, setTask] = useState('');
+export const AddTask = ({ addTask, dark, task, setTask }: Props) => {
 
     const handleKeyUp: React.KeyboardEventHandler<HTMLInputElement> = (event) => {
         if (event.code === 'Enter') {

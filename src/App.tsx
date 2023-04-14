@@ -9,6 +9,7 @@ import { api } from "./api";
 const app = () => {
   const [list, setList] = useState<ItemType[]>([]);
   const [darkMode, setDarkMode] = useState(false);
+  const [task, setTask] = useState('');
 
   useEffect(() => {
     let response = api.getTaskList()
@@ -20,6 +21,10 @@ const app = () => {
   const toggleTheme = () => {
     setDarkMode(!darkMode);
     api.setTheme(!darkMode);
+  }
+
+  const handleEditTask = (id: number) => {
+    api.editTask(id, setTask, setList);
   }
 
   const handleAddTask = (task: string) => {
@@ -58,10 +63,10 @@ const app = () => {
           <h1>Lista de Tarefas</h1>
         </header>
         
-        <AddTask addTask={handleAddTask} dark={darkMode} />
+        <AddTask addTask={handleAddTask} dark={darkMode} task={task} setTask={setTask} />
 
         {list.map((item, index) => (
-          <TaskItem item={item} key={index} handleChecked={handleChecked} dark={darkMode} setList={setList} />
+          <TaskItem item={item} key={index} handleChecked={handleChecked} dark={darkMode} setList={setList} editTask={handleEditTask} />
         ))}
 
         

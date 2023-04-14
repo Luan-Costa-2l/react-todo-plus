@@ -21,10 +21,14 @@ export const TaskBody = styled.div<{done: boolean, dark: boolean}>`
         font-size: 20px;
     }
 
-    .taskBody--deleteIcon {
+    .taskBody--deleteIcon, .taskBody--editIcon {
         margin-right: 15px;
         padding: 2px;
         border-radius: 50%;
         cursor: pointer;
+    }
+
+    .taskBody--editIcon {
+        margin-right: 5px;
     }
 `;

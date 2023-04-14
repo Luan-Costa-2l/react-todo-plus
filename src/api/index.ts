@@ -26,5 +26,16 @@ export const api = {
             return JSON.parse(response);
         }
         return false;
+    },
+    editTask: function(id: number, setTask: React.Dispatch<React.SetStateAction<string>>, setTaskList: React.Dispatch<React.SetStateAction<ItemType[]>>) {
+        let taskList = this.getTaskList();
+        if (taskList.length > 0) {
+            let task = taskList.find(item => item.id === id);
+            if (task) {
+                setTask(task.name);
+                setTaskList(taskList.filter(item => item.id !== id));
+                this.deleteTaskItem(task.id);
+            }
+        }
     }
 }

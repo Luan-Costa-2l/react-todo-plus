@@ -9,9 +9,10 @@ interface Props {
     handleChecked: (taskId: number) => void;
     dark: boolean;
     setList: React.Dispatch<React.SetStateAction<ItemType[]>>;
+    editTask: (id: number) => void;
 }
 
-export const TaskItem = ({ item, handleChecked, dark, setList }: Props) => {
+export const TaskItem = ({ item, handleChecked, dark, setList, editTask }: Props) => {
     const [isChecked, setIsChecked] = useState(item.done);
 
     const doneTask = () => {
@@ -29,6 +30,7 @@ export const TaskItem = ({ item, handleChecked, dark, setList }: Props) => {
         <TaskBody done={isChecked} dark={dark}>
             <input type="checkbox" name="checkbox" checked={isChecked} onChange={doneTask} />
             <div className="taskBody--name">{item.name}</div>
+            <div className="taskBody--editIcon" onClick={() => editTask(item.id)}>📝</div>
             <div className="taskBody--deleteIcon" onClick={handleDeleteItem}>🗑️</div>
         </TaskBody>
     )
