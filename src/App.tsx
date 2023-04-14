@@ -4,6 +4,7 @@ import { Body, Container } from "./App.styles";
 import { AddTask } from "./components/AddTask";
 import { ItemType } from "./styles/Item";
 import { TaskItem } from "./components/TaskItem";
+import { api } from "./api";
 
 const app = () => {
   const [list, setList] = useState<ItemType[]>([]);
@@ -21,6 +22,7 @@ const app = () => {
       newList.push({id: newList.length + 1, name: task, done: false});
 
       setList(newList);
+      api.setTaskList(newList);
     } else {
       alert('Campo tarefa deve ter algum conteúdo.');
     }
@@ -34,6 +36,7 @@ const app = () => {
       }
     });
     setList(newList);
+    api.setTaskList(newList);
   }
 
   return (
