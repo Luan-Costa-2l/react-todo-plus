@@ -35,6 +35,7 @@ const app = () => {
       newList.push({id: newId, name: task, done: false});
 
       setList(newList);
+      setTask('');
       api.setTaskList(newList);
     } else {
       alert('Campo tarefa deve ter algum conteúdo.');
