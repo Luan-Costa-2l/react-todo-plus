@@ -30,9 +30,9 @@ const app = () => {
   const handleAddTask = (task: string) => {
     if (task !== '') {
       let newList = [...list];
-      // let newId = list.length > 0 ? (list[list.length - 1].id + 1) : 0;
+      let newId = list.length > 0 ? (list[list.length - 1].id + 1) : 0;
 
-      newList.push({id: newList.length + 1, name: task, done: false});
+      newList.push({id: newId, name: task, done: false});
 
       setList(newList);
       api.setTaskList(newList);
